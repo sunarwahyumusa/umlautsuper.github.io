@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UmlautLernen — Kuasai Huruf Umlaut Jerman</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              blue: '#1D4ED8',
+              navy: '#1E3A8A',
+              dark: '#0F172A',
+            }
+          },
+          fontFamily: {
+            display: ['"Playfair Display"', 'serif'],
+            body: ['"DM Sans"', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: 'monospace;', sans-serif; }
+    .font-display { font-family: 'Playfair Display', serif; }
+    .umlaut-float {
+      animation: floatUp 6s ease-in-out infinite;
+    }
+    .umlaut-float:nth-child(2) { animation-delay: 2s; }
+    .umlaut-float:nth-child(3) { animation-delay: 4s; }
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-16px); }
+    }
+    .card-hover {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .card-hover:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 40px rgba(29, 78, 216, 0.12);
+    }
+    .btn-primary {
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(29, 78, 216, 0.4);
+    }
+    .step-line::after {
+      content: '';
+      position: absolute;
+      top: 28px;
+      left: calc(50% + 28px);
+      width: calc(100% - 56px);
+      height: 2px;
+      background: linear-gradient(to right, #1D4ED8, #93C5FD);
+    }
+    .noise-bg {
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    }
+    .diagonal-bg {
+      background: linear-gradient(135deg, #0F172A 0%, #1E3A8A 50%, #0F172A 100%);
+    }
+  </style>
+</head>
+<body class="bg-white text-brand-dark overflow-x-hidden">
+
+  <!-- NAVBAR -->
+  <nav class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2">
+        <span class="font-display text-2xl font-black text-brand-dark">Umlaut<span class="text-brand-blue">Super</span></span>
+      </a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
+        <a href="#fitur" class="hover:text-brand-blue transition-colors">Materi</a>
+        <a href="#pengucapan" class="hover:text-brand-blue transition-colors">Pengucapan</a>
+        <a href="#cara-kerja" class="hover:text-brand-blue transition-colors">Cara Kerja</a>
+        <a href="#testimoni" class="hover:text-brand-blue transition-colors">Testimoni</a>
+      </div>
+      <a href="#hero" class="btn-primary bg-brand-blue text-white text-sm font-semibold px-5 py-2.5 rounded-full">
+        Mulai Belajar →
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <section id="hero" class="min-h-screen pt-24 pb-16 flex items-center relative overflow-hidden noise-bg">
+    <!-- Background decorative circles -->
+    <div class="absolute -top-32 -right-32 w-[600px] h-[600px] rounded-full bg-blue-50 opacity-60 blur-3xl pointer-events-none"></div>
+    <div class="absolute -bottom-24 -left-24 w-[400px] h-[400px] rounded-full bg-blue-100 opacity-40 blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left: Copy -->
+      <div class="relative z-10">
+        <div class="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-brand-blue text-xs font-semibold px-4 py-1.5 rounded-full mb-6">
+          <span class="w-1.5 h-1.5 bg-brand-blue rounded-full"></span>
+          100% Gratis untuk Pemula
+        </div>
+        <h1 class="font-display text-5xl lg:text-6xl font-black text-brand-dark leading-tight mb-6">
+          Kuasai Huruf<br />
+          <span class="text-brand-blue italic">Umlaut Jerman</span><br />
+          dengan Mudah
+        </h1>
+        <p class="text-slate-500 text-lg leading-relaxed mb-8 max-w-md">
+          Platform belajar bahasa Jerman khusus huruf Ä, Ö, dan Ü yang dilengkapi panduan bunyi, kosakata, kalimat, dan kuis interaktif untuk pemula absolut.
+        </p>
+        <div class="flex flex-wrap gap-4">
+          <a href="#" class="btn-primary bg-brand-blue text-white font-semibold px-8 py-3.5 rounded-full text-sm">
+            Mulai Gratis Sekarang →
+          </a>
+          <a href="#cara-kerja" class="flex items-center gap-2 border border-slate-300 text-slate-700 font-semibold px-8 py-3.5 rounded-full text-sm hover:border-brand-blue hover:text-brand-blue transition-all duration-300">
+            ▷ Lihat Demo
+          </a>
+        </div>
+        <div class="flex items-center gap-6 mt-10">
+          <div class="flex -space-x-2">
+            <div class="w-8 h-8 rounded-full bg-blue-200 border-2 border-white flex items-center justify-center text-xs font-bold text-blue-700">A</div>
+            <div class="w-8 h-8 rounded-full bg-slate-200 border-2 border-white flex items-center justify-center text-xs font-bold text-slate-700">R</div>
+            <div class="w-8 h-8 rounded-full bg-blue-100 border-2 border-white flex items-center justify-center text-xs font-bold text-blue-600">S</div>
+            <div class="w-8 h-8 rounded-full bg-slate-300 border-2 border-white flex items-center justify-center text-xs font-bold text-slate-700">D</div>
+          </div>
+          <p class="text-slate-500 text-sm">
+            <span class="font-semibold text-brand-dark">2.400+</span> pelajar sudah bergabung
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: Floating Umlaut chars -->
+      <div class="relative flex items-center justify-center h-[420px]">
+        <div class="absolute inset-0 flex items-center justify-center">
+          <div class="w-72 h-72 rounded-full bg-blue-50 border border-blue-100"></div>
+        </div>
+        <div class="relative flex gap-4 items-end">
+          <div class="umlaut-float flex flex-col items-center">
+            <div class="w-28 h-28 bg-white rounded-3xl border-2 border-blue-200 shadow-xl flex items-center justify-center">
+              <span class="font-display text-5xl font-black text-brand-blue">Ä</span>
+            </div>
+            <span class="mt-2 text-xs font-medium text-slate-400">seperti "e"</span>
+          </div>
+          <div class="umlaut-float flex flex-col items-center mb-8">
+            <div class="w-36 h-36 bg-brand-blue rounded-3xl shadow-2xl flex items-center justify-center">
+              <span class="font-display text-6xl font-black text-white">Ö</span>
+            </div>
+            <span class="mt-2 text-xs font-medium text-slate-400">e + bibir o</span>
+          </div>
+          <div class="umlaut-float flex flex-col items-center">
+            <div class="w-28 h-28 bg-brand-dark rounded-3xl shadow-xl flex items-center justify-center">
+              <span class="font-display text-5xl font-black text-white">Ü</span>
+            </div>
+            <span class="mt-2 text-xs font-medium text-slate-400">i + bibir u</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATS BAR -->
+  <section class="diagonal-bg py-12">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div>
+          <div class="font-display text-4xl font-black text-white mb-1">3</div>
+          <div class="text-blue-300 text-sm font-medium">Huruf Umlaut</div>
+        </div>
+        <div>
+          <div class="font-display text-4xl font-black text-white mb-1">50+</div>
+          <div class="text-blue-300 text-sm font-medium">Kosakata Lengkap</div>
+        </div>
+        <div>
+          <div class="font-display text-4xl font-black text-white mb-1">8</div>
+          <div class="text-blue-300 text-sm font-medium">Soal Kuis Interaktif</div>
+        </div>
+        <div>
+          <div class="font-display text-4xl font-black text-white mb-1">100%</div>
+          <div class="text-blue-300 text-sm font-medium">Gratis Selamanya</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FITUR UTAMA -->
+  <section id="fitur" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-blue text-sm font-semibold uppercase tracking-widest mb-3">Fitur Lengkap</p>
+        <h2 class="font-display text-4xl lg:text-5xl font-bold text-brand-dark mb-4">
+          Semua yang Kamu Butuhkan<br />untuk Mulai
+        </h2>
+        <p class="text-slate-500 max-w-xl mx-auto text-lg">Dirancang khusus untuk pemula yang belum pernah belajar bahasa Jerman sebelumnya.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="card-hover bg-white border border-slate-200 rounded-3xl p-8">
+          <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+            🔤
+          </div>
+          <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Pengenalan Huruf</h3>
+          <p class="text-slate-500 leading-relaxed text-sm">
+            Kenali karakter Ä, Ö, dan Ü secara mendalam mulai dari asal-usul huruf, fungsinya dalam tata bahasa, dan perbedaannya dengan huruf dasar.
+          </p>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-center gap-2 text-sm text-slate-600"><span class="text-brand-blue">✓</span> Deskripsi tiap Umlaut</li>
+            <li class="flex items-center gap-2 text-sm text-slate-600"><span class="text-brand-blue">✓</span> 6 contoh kosakata per huruf</li>
+            <li class="flex items-center gap-2 text-sm text-slate-600"><span class="text-brand-blue">✓</span> Contoh kalimat nyata</li>
+          </ul>
+        </div>
+
+        <!-- Card 2 (featured) -->
+        <div class="card-hover bg-brand-dark rounded-3xl p-8 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-32 h-32 bg-brand-blue/20 rounded-full -translate-y-8 translate-x-8 blur-2xl"></div>
+          <div class="relative z-10">
+            <div class="w-14 h-14 bg-blue-900 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+              🎵
+            </div>
+            <div class="inline-block bg-brand-blue text-white text-xs font-bold px-3 py-1 rounded-full mb-4">Paling Penting</div>
+            <h3 class="font-display text-xl font-bold text-white mb-3">Panduan Pengucapan</h3>
+            <p class="text-slate-400 leading-relaxed text-sm">
+              Pelajari cara melafalkan bunyi Umlaut yang tidak ada padanannya di Indonesia, dengan teknik perbandingan yang mudah dipahami.
+            </p>
+            <ul class="mt-4 space-y-2">
+              <li class="flex items-center gap-2 text-sm text-slate-300"><span class="text-blue-400">✓</span> Notasi IPA</li>
+              <li class="flex items-center gap-2 text-sm text-slate-300"><span class="text-blue-400">✓</span> Teknik posisi lidah & bibir</li>
+              <li class="flex items-center gap-2 text-sm text-slate-300"><span class="text-blue-400">✓</span> Tips penulisan alternatif</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="card-hover bg-white border border-slate-200 rounded-3xl p-8">
+          <div class="w-14 h-14 bg-blue-50 rounded-2xl flex items-center justify-center mb-6 text-2xl">
+            ✏️
+          </div>
+          <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Kuis Interaktif</h3>
+          <p class="text-slate-500 leading-relaxed text-sm">
+            Uji pemahamanmu dengan 8 soal pilihan ganda yang mencakup arti kata, pengucapan, dan identifikasi huruf Umlaut.
+          </p>
+          <ul class="mt-4 space-y-2">
+            <li class="flex items-center gap-2 text-sm text-slate-600"><span class="text-brand-blue">✓</span> Feedback langsung tiap soal</li>
+            <li class="flex items-center gap-2 text-sm text-slate-600"><span class="text-brand-blue">✓</span> Skor akhir & evaluasi</li>
+            <li class="flex items-center gap-2 text-sm text-slate-600"><span class="text-brand-blue">✓</span> Bisa diulang tanpa batas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PENGUCAPAN PREVIEW -->
+  <section id="pengucapan" class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid lg:grid-cols-2 gap-16 items-center">
+        <div>
+          <p class="text-brand-blue text-sm font-semibold uppercase tracking-widest mb-3">Panduan Bunyi</p>
+          <h2 class="font-display text-4xl font-bold text-brand-dark mb-6">
+            Bunyi yang Tidak Ada<br />di Bahasa Indonesia
+          </h2>
+          <p class="text-slate-500 leading-relaxed mb-8">
+            Ö dan Ü adalah bunyi yang benar-benar baru bagi penutur Indonesia. Dengan metode perbandingan posisi mulut yang kami kembangkan, kamu bisa mulai mengucapkannya dalam hitungan menit.
+          </p>
+          <a href="#" class="btn-primary inline-flex items-center gap-2 bg-brand-blue text-white font-semibold px-7 py-3 rounded-full text-sm">
+            Pelajari Pengucapan →
+          </a>
+        </div>
+        <div class="space-y-4">
+          <div class="bg-white rounded-2xl p-5 border border-slate-200 flex items-center gap-5 card-hover">
+            <div class="w-16 h-16 bg-blue-50 rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="font-display text-3xl font-black text-brand-blue">Ä</span>
+            </div>
+            <div>
+              <div class="font-semibold text-brand-dark mb-1">Bunyi /ɛ/</div>
+              <div class="text-slate-500 text-sm">Ucapkan seperti "e" dalam kata <em>"enak"</em> bunyi paling mudah bagi penutur Indonesia.</div>
+            </div>
+          </div>
+          <div class="bg-brand-blue rounded-2xl p-5 flex items-center gap-5 card-hover">
+            <div class="w-16 h-16 bg-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="font-display text-3xl font-black text-white">Ö</span>
+            </div>
+            <div>
+              <div class="font-semibold text-white mb-1">Bunyi /ø/</div>
+              <div class="text-blue-200 text-sm">Lidah di posisi "e", bibir dibulatkan seperti "o". Latih perlahan!</div>
+            </div>
+          </div>
+          <div class="bg-brand-dark rounded-2xl p-5 flex items-center gap-5 card-hover">
+            <div class="w-16 h-16 bg-slate-800 rounded-xl flex items-center justify-center flex-shrink-0">
+              <span class="font-display text-3xl font-black text-white">Ü</span>
+            </div>
+            <div>
+              <div class="font-semibold text-white mb-1">Bunyi /y/</div>
+              <div class="text-slate-400 text-sm">Lidah di posisi "i", bibir dibulatkan seperti "u". Tricky tapi bisa!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CARA KERJA -->
+  <section id="cara-kerja" class="py-24 bg-white">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-blue text-sm font-semibold uppercase tracking-widest mb-3">Cara Kerja</p>
+        <h2 class="font-display text-4xl lg:text-5xl font-bold text-brand-dark mb-4">
+          3 Langkah Sederhana
+        </h2>
+        <p class="text-slate-500 max-w-md mx-auto">Dari tidak tahu apa-apa hingga percaya diri menggunakan Umlaut.</p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8 relative">
+        <!-- Step 1 -->
+        <div class="text-center relative">
+          <div class="w-14 h-14 bg-brand-blue text-white rounded-2xl flex items-center justify-center text-xl font-display font-black mx-auto mb-6 shadow-lg shadow-blue-200">
+            1
+          </div>
+          <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Pilih Huruf Umlaut</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Mulai dengan Ä, Ö, atau Ü. Setiap huruf punya modul tersendiri yang bisa dipelajari mandiri.</p>
+        </div>
+
+        <!-- Connector -->
+        <div class="hidden md:flex items-start justify-center pt-7">
+          <div class="flex-1 h-px bg-gradient-to-r from-brand-blue to-blue-200 mt-0"></div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-dark text-white rounded-2xl flex items-center justify-center text-xl font-display font-black mx-auto mb-6 shadow-lg">
+            2
+          </div>
+          <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Pelajari Bunyi & Kosakata</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Pahami cara pengucapan, lihat 6 contoh kosakata, dan pelajari penggunaannya dalam kalimat nyata.</p>
+        </div>
+
+        <!-- Connector -->
+        <div class="hidden md:flex items-start justify-center pt-7">
+          <div class="flex-1 h-px bg-gradient-to-r from-slate-300 to-brand-blue mt-0"></div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="text-center">
+          <div class="w-14 h-14 bg-brand-blue text-white rounded-2xl flex items-center justify-center text-xl font-display font-black mx-auto mb-6 shadow-lg shadow-blue-200">
+            3
+          </div>
+          <h3 class="font-display text-xl font-bold text-brand-dark mb-3">Uji dengan Kuis</h3>
+          <p class="text-slate-500 text-sm leading-relaxed">Kerjakan kuis interaktif 8 soal, dapatkan feedback instan, dan ukur seberapa jauh pemahamanmu.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONI -->
+  <section id="testimoni" class="py-24 bg-slate-50">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="text-center mb-16">
+        <p class="text-brand-blue text-sm font-semibold uppercase tracking-widest mb-3">Testimoni</p>
+        <h2 class="font-display text-4xl font-bold text-brand-dark mb-4">Kata Mereka yang Sudah Belajar</h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Testimoni 1 -->
+        <div class="card-hover bg-white rounded-3xl p-8 border border-slate-200">
+          <div class="flex gap-1 mb-5">
+            <span class="text-yellow-400 text-lg">★★★★★</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">
+            "Sebelumnya saya takut belajar bahasa Jerman karena huruf-hurufnya terlihat aneh. Setelah pakai UmlautLernen, Ä, Ö, Ü udah ngga rumit lagi!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-brand-blue rounded-full flex items-center justify-center text-white font-bold text-sm">AR</div>
+            <div>
+              <div class="font-semibold text-brand-dark text-sm">Gatot Schwarznegger</div>
+              <div class="text-slate-400 text-xs">Mahasiswa, Surabaya</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimoni 2 -->
+        <div class="card-hover bg-brand-dark rounded-3xl p-8">
+          <div class="flex gap-1 mb-5">
+            <span class="text-yellow-400 text-lg">★★★★★</span>
+          </div>
+          <p class="text-slate-300 text-sm leading-relaxed mb-6 italic">
+            "Penjelasan cara mengucapkan Ö dan Ü sangat jelas. Teknik 'lidah di posisi i, bibir dibulatkan, itu game-changer buat saya, saya akan lawan!!!!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-700 rounded-full flex items-center justify-center text-white font-bold text-sm">BP</div>
+            <div>
+              <div class="font-semibold text-white text-sm">King Nasir</div>
+              <div class="text-slate-400 text-xs">Ifluencer, Yogyakarta</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimoni 3 -->
+        <div class="card-hover bg-white rounded-3xl p-8 border border-slate-200">
+          <div class="flex gap-1 mb-5">
+            <span class="text-yellow-400 text-lg">★★★★★</span>
+          </div>
+          <p class="text-slate-600 text-sm leading-relaxed mb-6 italic">
+            "Kuis interaktifnya sangat membantu lohya. Saya bisa langsung tahu mana yang masih salah dan mana yang sudah benar cik. Belajar jadi uasikkk rek!"
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-slate-200 rounded-full flex items-center justify-center text-slate-700 font-bold text-sm">SD</div>
+            <div>
+              <div class="font-semibold text-brand-dark text-sm">Rusdi Imut</div>
+              <div class="text-slate-400 text-xs">Karyawan, Malang</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA BOTTOM -->
+  <section class="py-24 diagonal-bg relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-8 left-12 font-display text-9xl font-black text-white opacity-20">Ä</div>
+      <div class="absolute bottom-8 right-12 font-display text-9xl font-black text-white opacity-20">Ü</div>
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display text-[200px] font-black text-white opacity-10">Ö</div>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto px-6 text-center">
+      <p class="text-blue-300 text-sm font-semibold uppercase tracking-widest mb-4">Mulai Sekarang</p>
+      <h2 class="font-display text-4xl lg:text-5xl font-black text-white mb-6 leading-tight">
+        Siap Mulai Belajar<br />Bahasa Jerman Hari Ini?
+      </h2>
+      <p class="text-blue-200 text-lg mb-10 max-w-xl mx-auto">
+        Bergabunglah dengan 2.400+ pelajar yang sudah memulai perjalanan belajar bahasa Jerman mereka. Gratis, mudah, dan menyenangkan.
+      </p>
+      <a href="#" class="btn-primary inline-block bg-white text-brand-dark font-bold px-10 py-4 rounded-full text-base hover:bg-blue-50 transition-all duration-300">
+        Mulai Belajar Gratis →
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-dark py-16">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="grid md:grid-cols-3 gap-12 mb-12">
+        <div>
+          <div class="font-display text-2xl font-black text-white mb-3">Umlaut<span class="text-blue-400">Super</span></div>
+          <p class="text-slate-400 text-sm leading-relaxed">Platform belajar huruf Umlaut bahasa Jerman untuk pemula Indonesia. Mudah, gratis, dan efektif.</p>
+        </div>
+        <div>
+          <div class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Navigasi</div>
+          <ul class="space-y-2">
+            <li><a href="#fitur" class="text-slate-400 hover:text-white text-sm transition-colors">Fitur Materi</a></li>
+            <li><a href="#pengucapan" class="text-slate-400 hover:text-white text-sm transition-colors">Panduan Pengucapan</a></li>
+            <li><a href="#cara-kerja" class="text-slate-400 hover:text-white text-sm transition-colors">Cara Kerja</a></li>
+            <li><a href="#testimoni" class="text-slate-400 hover:text-white text-sm transition-colors">Testimoni</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="text-white font-semibold mb-4 text-sm uppercase tracking-wider">Huruf Umlaut</div>
+          <div class="flex gap-3">
+            <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center">
+              <span class="font-display text-xl font-black text-blue-400">Ä</span>
+            </div>
+            <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center">
+              <span class="font-display text-xl font-black text-blue-400">Ö</span>
+            </div>
+            <div class="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center">
+              <span class="font-display text-xl font-black text-blue-400">Ü</span>
+            </div>
+          </div>
+          <p class="text-slate-500 text-xs mt-4">Pelajari ketiganya secara gratis, kapan saja dan di mana saja.</p>
+        </div>
+      </div>
+      <div class="border-t border-slate-800 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+        <p class="text-slate-500 text-sm">© 2026 UmlautSuper. Dibuat dengan kasih sayang untuk pelajar WNI tercinta.</p>
+        <p class="text-slate-600 text-xs">Sunarwahyu Musa Wirawan</p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
